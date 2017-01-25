@@ -33,7 +33,6 @@ class HomeViewController: UIViewController {
 			configurableImage.image = UIImage(named: "waves-and-rocks")
 		}
     }
-
 }
 
 
