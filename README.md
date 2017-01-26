@@ -44,5 +44,7 @@ Setting up Remote Configuration in your project using Firebase is fairly straigh
 
 ## Links
 [Firebase Home](https://firebase.google.com)
+
 [Remote Config Docs](https://firebase.google.com/docs/remote-config/)
+
 [Remote Config on iOS](https://firebase.google.com/docs/remote-config/use-config-ios)
