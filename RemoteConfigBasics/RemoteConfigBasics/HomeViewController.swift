@@ -10,11 +10,11 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-	@IBOutlet private weak var label1TextBlock: UILabel!
-	@IBOutlet private weak var label2TextBlock: UILabel!
-	@IBOutlet private weak var configurableImage: UIImageView!
-	@IBOutlet private weak var changeTextBlockButton: UIButton!
-	@IBOutlet private weak var RefreshConfigButton: UIButton!
+	@IBOutlet fileprivate weak var label1TextBlock: UILabel!
+	@IBOutlet fileprivate weak var label2TextBlock: UILabel!
+	@IBOutlet fileprivate weak var configurableImage: UIImageView!
+	@IBOutlet fileprivate weak var changeTextBlockButton: UIButton!
+	@IBOutlet fileprivate weak var RefreshConfigButton: UIButton!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +25,8 @@ class HomeViewController: UIViewController {
 		// rowing https://c1.staticflickr.com/3/2849/11459260503_e5f7e787f7_h.jpg
 		// turtle https://c1.staticflickr.com/3/2833/11457337475_bd93420fea_h.jpg
 		// bay    https://c2.staticflickr.com/4/3781/11459133104_04e2a807a4_h.jpg
-		if let url  = URL(string: "https://farm3.staticflickr.com/2833/11457337475_3d6fbc795f_z_d.jpg"),
-		   let data = try? Data(contentsOf: url) {
+		let urlString = RemoteConfigManager.sharedInstance.imageULRString
+		if let url = URL(string: urlString), let data = try? Data(contentsOf: url) {
 			configurableImage.image = UIImage(data: data)
 		}
 		else {
@@ -40,10 +40,12 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController {
 	
-	@IBAction func changeTextBlockButtonTapped(_ sender: UIButton) {
+	@IBAction fileprivate func changeTextBlockButtonTapped(_ sender: UIButton) {
+		label1TextBlock.text = RemoteConfigManager.sharedInstance.label1Text
 	}
 	
-	@IBAction func refreshConfigButtonTapped(_ sender: UIButton) {
+	@IBAction fileprivate func refreshConfigButtonTapped(_ sender: UIButton) {
+		RemoteConfigManager.sharedInstance.fetchRemoteValues()
 	}
 	
 }

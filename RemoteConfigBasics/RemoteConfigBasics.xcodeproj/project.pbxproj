@@ -20,6 +20,8 @@
 		7F12FE7E1E383C6700FDA883 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F12FE781E383C6700FDA883 /* GoogleSymbolUtilities.framework */; };
 		7F12FE7F1E383C6700FDA883 /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F12FE791E383C6700FDA883 /* GoogleToolboxForMac.framework */; };
 		7F12FE811E383C9900FDA883 /* FirebaseRemoteConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F12FE801E383C9900FDA883 /* FirebaseRemoteConfig.framework */; };
+		7F12FE8A1E39799A00FDA883 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F12FE891E39799A00FDA883 /* RemoteConfigDefaults.plist */; };
+		7F12FE8C1E39973F00FDA883 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12FE8B1E39973F00FDA883 /* RemoteConfigManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		7F12FE821E383E1C00FDA883 /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
 		7F12FE831E383EA700FDA883 /* RemoteConfigBasics-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RemoteConfigBasics-Bridging-Header.h"; sourceTree = "<group>"; };
 		7F12FE871E383F5E00FDA883 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		7F12FE891E39799A00FDA883 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
+		7F12FE8B1E39973F00FDA883 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +87,12 @@
 			children = (
 				7F12FE5D1E36CDC500FDA883 /* AppDelegate.swift */,
 				7F12FE6F1E36CE9D00FDA883 /* HomeViewController.swift */,
+				7F12FE8B1E39973F00FDA883 /* RemoteConfigManager.swift */,
 				7F12FE611E36CDC500FDA883 /* Main.storyboard */,
-				7F12FE641E36CDC500FDA883 /* Assets.xcassets */,
 				7F12FE661E36CDC500FDA883 /* LaunchScreen.storyboard */,
-				7F12FE711E382EC700FDA883 /* GoogleService-Info.plist */,
-				7F12FE691E36CDC500FDA883 /* Info.plist */,
 				7F12FE831E383EA700FDA883 /* RemoteConfigBasics-Bridging-Header.h */,
+				7F12FE641E36CDC500FDA883 /* Assets.xcassets */,
+				7F12FE881E39792C00FDA883 /* SupportingFiles */,
 			);
 			path = RemoteConfigBasics;
 			sourceTree = "<group>";
@@ -107,6 +111,16 @@
 				7F12FE791E383C6700FDA883 /* GoogleToolboxForMac.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F12FE881E39792C00FDA883 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7F12FE711E382EC700FDA883 /* GoogleService-Info.plist */,
+				7F12FE691E36CDC500FDA883 /* Info.plist */,
+				7F12FE891E39799A00FDA883 /* RemoteConfigDefaults.plist */,
+			);
+			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F12FE681E36CDC500FDA883 /* LaunchScreen.storyboard in Resources */,
+				7F12FE8A1E39799A00FDA883 /* RemoteConfigDefaults.plist in Resources */,
 				7F12FE721E382EC700FDA883 /* GoogleService-Info.plist in Resources */,
 				7F12FE651E36CDC500FDA883 /* Assets.xcassets in Resources */,
 				7F12FE631E36CDC500FDA883 /* Main.storyboard in Resources */,
@@ -186,6 +201,7 @@
 			files = (
 				7F12FE5E1E36CDC500FDA883 /* AppDelegate.swift in Sources */,
 				7F12FE701E36CE9D00FDA883 /* HomeViewController.swift in Sources */,
+				7F12FE8C1E39973F00FDA883 /* RemoteConfigManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

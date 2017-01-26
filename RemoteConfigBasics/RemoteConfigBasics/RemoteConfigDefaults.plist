@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>label_1</key>
+	<string>This text came from the RemoteConfigDefaults.plist file.</string>
+	<key>image_url</key>
+	<string>https://c2.staticflickr.com/4/3781/11459133104_04e2a807a4_h.jpg</string>
+</dict>
+</plist>
