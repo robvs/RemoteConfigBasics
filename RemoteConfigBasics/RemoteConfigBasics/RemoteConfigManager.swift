@@ -37,10 +37,15 @@ final class RemoteConfigManager {
 	
 	// MARK: - Properties used to access config values
 	
-	public var label1Text: String {
-		guard let value = firebaseRemoteConfig["label_1"].stringValue else { return "" }
+	public var labelText: String {
+		guard let value = firebaseRemoteConfig["label_text"].stringValue else { return "" }
 		return value
 	}
+    
+    public var labelToChange: Int {
+        guard let value = firebaseRemoteConfig["label_to_change"].numberValue else { return 1 }
+        return value.intValue
+    }
 	
 	public var imageULRString: String {
 		guard let value = firebaseRemoteConfig["image_url"].stringValue else { return "" }
@@ -60,7 +65,7 @@ extension RemoteConfigManager {
 	}
 	
 	/// Fetch the configuration values from the remote server.
-	public func fetchRemoteValues() {
+    public func fetchRemoteValues(completion: @escaping (() -> Void)) {
 		
 		// Do a real fetch once per minute. Note that this duration is only 
 		// intended for demonstration purposes. This value should normally
@@ -80,6 +85,8 @@ extension RemoteConfigManager {
 			// occur separately from the fetch (i.e. when foregrounding the app), 
 			// but this is better for this demo
 			self.firebaseRemoteConfig.activateFetched()
+            
+            completion()
 		}
 	}
 }
